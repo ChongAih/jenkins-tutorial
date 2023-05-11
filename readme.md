@@ -63,3 +63,7 @@ docker inspect <container_id> | grep IPAddress
 ```
 docker pull devopsjourney1/myjenkinsagents:python
 ```
+
+## Guide to Create Credential
+
+https://www.jenkins.io/doc/book/using/using-credentials/
