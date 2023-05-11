@@ -1,12 +1,15 @@
 pipeline {
     agent { 
         node {
-            label 'jenkins-agent-goes-here'
+            label 'docker-agent-python'
             }
       }
     stages {
         stage('Build') {
             steps {
+                withCredentials([usernamePassword(credentialsId: 'secret', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
+                    echo '${USERNAME}:${PASSWORD}'
+                }
                 echo "Building.."
                 sh '''
                 echo "doing build stuff.."
