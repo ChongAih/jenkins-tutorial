@@ -4,7 +4,8 @@ pipeline {
         stage('Build') {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'secret', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
-                    echo '${USERNAME}:${PASSWORD}'
+                    sh 'echo $PASSWORD'
+                    echo USERNAME
                 }
                 echo "Building.."
                 sh '''
